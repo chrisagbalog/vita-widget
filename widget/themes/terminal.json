@@ -1,0 +1,25 @@
+{
+  "name": "terminal",
+  "label": "Terminal",
+  "_vibe": "Dark, monospace, green-on-black hacker — engineering / DevOps folks",
+  "colors": {
+    "background": "#0A0E0A",
+    "surface": "#0F150F",
+    "surface_alt": "#152015",
+    "text_primary": "#B7E8B7",
+    "text_muted": "#8FCB8F",
+    "text_muted_2": "#69A369",
+    "accent": "#2EE66B",
+    "accent_deep": "#23C257",
+    "on_accent": "#04250F",
+    "border": "rgba(46,230,107,.35)",
+    "border_subtle": "rgba(46,230,107,.12)",
+    "status_live": "#2EE66B"
+  },
+  "fonts": {
+    "sans": "ui-monospace, 'SF Mono', Menlo, Consolas, monospace",
+    "mono": "ui-monospace, 'SF Mono', Menlo, Consolas, monospace"
+  },
+  "radius": "0px",
+  "shadows": "none"
+}

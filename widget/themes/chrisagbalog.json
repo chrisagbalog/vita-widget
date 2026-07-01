@@ -1,0 +1,35 @@
+{
+  "name": "chrisagbalog",
+  "label": "Chris Agbalog (site match)",
+  "_source": "Extracted from chrisagbalog.com :root design tokens + custom CSS, 2026-07-02 (Phase 0 site audit)",
+  "colors": {
+    "background": "#F7F8F9",
+    "surface": "#FFFFFF",
+    "surface_alt": "#EEF1F3",
+    "text_primary": "#2A2E33",
+    "text_muted": "#42464B",
+    "text_muted_2": "#6C7074",
+    "accent": "#2C7196",
+    "accent_deep": "#1F5D7E",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(20,22,25,.15)",
+    "border_subtle": "rgba(20,22,25,.05)",
+    "status_live": "#2F8F5B",
+    "status_wip": "#B5811C"
+  },
+  "fonts": {
+    "sans": "'Archivo', system-ui, sans-serif",
+    "mono": "'JetBrains Mono', ui-monospace, monospace",
+    "google_fonts_import": "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+  },
+  "radius": "2px",
+  "shadows": "subtle",
+  "conventions": {
+    "subhead_prefix": "// ",
+    "section_numbering": true,
+    "kicker_style": "mono, uppercase, letter-spacing .22em, accent color",
+    "headings": "Archivo 800, uppercase, tight letter-spacing",
+    "status_dots": "pulsing 7px dots (accent/live/wip)",
+    "buttons": "mono, uppercase, 1px radius, dark fill or ghost border"
+  }
+}

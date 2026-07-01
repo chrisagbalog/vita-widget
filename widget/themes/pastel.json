@@ -1,0 +1,25 @@
+{
+  "name": "pastel",
+  "label": "Pastel",
+  "_vibe": "Soft colors, rounded corners, friendly — wellness, lifestyle, hospitality",
+  "colors": {
+    "background": "#FDF6F9",
+    "surface": "#FFFFFF",
+    "surface_alt": "#F3EAF6",
+    "text_primary": "#4A3B52",
+    "text_muted": "#6D5B77",
+    "text_muted_2": "#8B7996",
+    "accent": "#C2588F",
+    "accent_deep": "#A84378",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(74,59,82,.16)",
+    "border_subtle": "rgba(74,59,82,.06)",
+    "status_live": "#69B591"
+  },
+  "fonts": {
+    "sans": "'Avenir Next', 'Trebuchet MS', system-ui, sans-serif",
+    "mono": "ui-monospace, Menlo, monospace"
+  },
+  "radius": "18px",
+  "shadows": "subtle"
+}

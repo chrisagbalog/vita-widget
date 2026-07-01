@@ -1,0 +1,25 @@
+{
+  "name": "minimalist",
+  "label": "Minimalist",
+  "_vibe": "Clean, lots of whitespace, neutral palette — general-purpose default for forks",
+  "colors": {
+    "background": "#FAFAFA",
+    "surface": "#FFFFFF",
+    "surface_alt": "#F1F3F5",
+    "text_primary": "#1F2328",
+    "text_muted": "#4B5158",
+    "text_muted_2": "#6E747B",
+    "accent": "#4263EB",
+    "accent_deep": "#364FC7",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(31,35,40,.16)",
+    "border_subtle": "rgba(31,35,40,.06)",
+    "status_live": "#2F9E44"
+  },
+  "fonts": {
+    "sans": "system-ui, -apple-system, 'Segoe UI', sans-serif",
+    "mono": "ui-monospace, 'SF Mono', Menlo, monospace"
+  },
+  "radius": "8px",
+  "shadows": "subtle"
+}

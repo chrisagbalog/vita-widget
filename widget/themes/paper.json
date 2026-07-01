@@ -1,0 +1,25 @@
+{
+  "name": "paper",
+  "label": "Paper / Notebook",
+  "_vibe": "Cream background, handwritten warmth — educators, illustrators",
+  "colors": {
+    "background": "#FAF3DF",
+    "surface": "#FFFBEC",
+    "surface_alt": "#F3E9CE",
+    "text_primary": "#42381F",
+    "text_muted": "#63563A",
+    "text_muted_2": "#84765A",
+    "accent": "#A34A24",
+    "accent_deep": "#82371A",
+    "on_accent": "#FFF6E5",
+    "border": "rgba(66,56,31,.32)",
+    "border_subtle": "rgba(66,56,31,.12)",
+    "status_live": "#5C8A4E"
+  },
+  "fonts": {
+    "sans": "'Bradley Hand', 'Segoe Print', 'Comic Sans MS', cursive",
+    "mono": "'Courier New', Courier, monospace"
+  },
+  "radius": "10px",
+  "shadows": "subtle"
+}

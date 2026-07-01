@@ -1,0 +1,60 @@
+# Weekly anti-hallucination gate against PRODUCTION.
+# Catches silent regressions (model updates, data drift) between deploys —
+# GitHub emails the repo owner automatically when a scheduled run fails.
+#
+# Secrets required (repo Settings → Secrets and variables → Actions):
+#   ANTHROPIC_API_KEY  — for the LLM judge
+#   EVAL_BYPASS_TOKEN  — skips the per-IP rate limit (matches the Supabase secret)
+#   CONTACT_EMAIL / WINKS_PHONE / WINKS_EMAIL — deploy-time contact injection,
+#     merged into the judge's ground truth (else real answers containing them
+#     get graded as hallucinations) and redacted from reports/logs by run.py
+#   RESUME_PRIVATE_B64 / CASES_PRIVATE_B64 — base64 of the REAL resume.json and
+#     cases.json (the committed files are fictional template data). Refresh with:
+#       base64 -i data/resume.private.json | gh secret set RESUME_PRIVATE_B64
+#       base64 -i evals/cases.private.json | gh secret set CASES_PRIVATE_B64
+# Schedule/dispatch only: secrets are never exposed to fork PRs.
+name: Weekly eval gate
+
+on:
+  schedule:
+    - cron: "0 13 * * 1" # Mondays 13:00 UTC (~9am ET)
+  workflow_dispatch: # allow manual runs from the Actions tab
+
+jobs:
+  eval-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # stdlib-only harness — no pip install step by design
+      - name: Materialize the real resume + cases from secrets
+        env:
+          RESUME_PRIVATE_B64: ${{ secrets.RESUME_PRIVATE_B64 }}
+          CASES_PRIVATE_B64: ${{ secrets.CASES_PRIVATE_B64 }}
+        run: |
+          # Without these secrets (e.g. on a fork) the harness falls back to
+          # the committed fictional sample data — the gate still runs, it just
+          # tests the template persona instead of the real deployment.
+          if [ -n "$RESUME_PRIVATE_B64" ]; then
+            echo "$RESUME_PRIVATE_B64" | base64 -d > data/resume.private.json
+          fi
+          if [ -n "$CASES_PRIVATE_B64" ]; then
+            echo "$CASES_PRIVATE_B64" | base64 -d > evals/cases.private.json
+          fi
+      - name: Run the eval gate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EVAL_BYPASS_TOKEN: ${{ secrets.EVAL_BYPASS_TOKEN }}
+          CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
+          WINKS_PHONE: ${{ secrets.WINKS_PHONE }}
+          WINKS_EMAIL: ${{ secrets.WINKS_EMAIL }}
+        run: python3 evals/run.py
+      - name: Upload report
+        if: always() # keep the report even when the gate fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: evals/reports/
+          retention-days: 90

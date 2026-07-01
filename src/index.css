@@ -1,0 +1,76 @@
+/* Tailwind v4 — one import replaces the old three @tailwind directives. */
+@import "tailwindcss";
+
+/*
+ * Theme variables get their values at startup from
+ * widget/themes/chrisagbalog.json (see src/lib/theme.ts) so the JSON file
+ * stays the single source of truth. The fallbacks here only matter if
+ * JavaScript hasn't run yet (prevents a flash of unstyled content).
+ */
+:root {
+  --vita-bg: #f7f8f9;
+  --vita-surface: #ffffff;
+  --vita-surface-alt: #eef1f3;
+  --vita-text: #2a2e33;
+  --vita-text-muted: #42464b;
+  --vita-text-muted-2: #6c7074;
+  --vita-accent: #2c7196;
+  --vita-accent-deep: #1f5d7e;
+  --vita-on-accent: #ffffff;
+  --vita-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --vita-border: rgba(20, 22, 25, 0.15);
+  --vita-border-subtle: rgba(20, 22, 25, 0.05);
+  --vita-live: #2f8f5b;
+  --vita-font-sans: "Archivo", system-ui, sans-serif;
+  --vita-font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --vita-radius: 2px;
+}
+
+body {
+  background: var(--vita-bg);
+  color: var(--vita-text);
+  font-family: var(--vita-font-sans);
+}
+
+/* Pulsing status dot — matches chrisagbalog.com's 7px "live" dots. */
+.vita-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--vita-live);
+  animation: vita-pulse 2s ease-in-out infinite;
+}
+@keyframes vita-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+/* New messages ease in instead of popping. Mount-only: the streaming bubble
+   keeps its position in the list while it grows, so it animates just once.
+   Visitors who prefer reduced motion get an instant appearance. */
+@media (prefers-reduced-motion: no-preference) {
+  .vita-msg-in {
+    animation: vita-msg-in 0.22s ease-out;
+  }
+}
+@keyframes vita-msg-in {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Typing indicator: three dots that blink in sequence while Vita thinks. */
+.vita-typing span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 4px;
+  border-radius: 50%;
+  background: var(--vita-text-muted-2);
+  animation: vita-blink 1.2s infinite both;
+}
+.vita-typing span:nth-child(2) { animation-delay: 0.2s; }
+.vita-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes vita-blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 1; }
+}

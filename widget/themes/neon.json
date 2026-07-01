@@ -1,0 +1,25 @@
+{
+  "name": "neon",
+  "label": "Neon / Cyberpunk",
+  "_vibe": "Dark base, electric pink accents, cyan edges — gamers, creative tech",
+  "colors": {
+    "background": "#0B0517",
+    "surface": "#140A24",
+    "surface_alt": "#1D1033",
+    "text_primary": "#EDE7FF",
+    "text_muted": "#C3B8E3",
+    "text_muted_2": "#9C8FC7",
+    "accent": "#FF2E9A",
+    "accent_deep": "#C4186F",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(0,229,255,.4)",
+    "border_subtle": "rgba(0,229,255,.14)",
+    "status_live": "#00E5FF"
+  },
+  "fonts": {
+    "sans": "'Avenir Next', 'Segoe UI', system-ui, sans-serif",
+    "mono": "ui-monospace, 'SF Mono', Menlo, monospace"
+  },
+  "radius": "6px",
+  "shadows": "glow"
+}

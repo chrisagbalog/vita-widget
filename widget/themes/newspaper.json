@@ -1,0 +1,25 @@
+{
+  "name": "newspaper",
+  "label": "Newspaper",
+  "_vibe": "Serif fonts, newsprint tones, editorial — writers, journalists, editors",
+  "colors": {
+    "background": "#F7F3EA",
+    "surface": "#FFFDF6",
+    "surface_alt": "#F0EADA",
+    "text_primary": "#1A1611",
+    "text_muted": "#433D33",
+    "text_muted_2": "#6B6355",
+    "accent": "#A61B1B",
+    "accent_deep": "#7E1414",
+    "on_accent": "#FFF8EE",
+    "border": "rgba(26,22,17,.4)",
+    "border_subtle": "rgba(26,22,17,.12)",
+    "status_live": "#3E6B3A"
+  },
+  "fonts": {
+    "sans": "Georgia, 'Times New Roman', Times, serif",
+    "mono": "'Courier New', Courier, monospace"
+  },
+  "radius": "0px",
+  "shadows": "none"
+}

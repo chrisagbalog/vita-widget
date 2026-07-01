@@ -1,0 +1,25 @@
+{
+  "name": "y2k",
+  "label": "Y2K",
+  "_vibe": "Chrome, gradients, nostalgic — personal-brand creatives",
+  "colors": {
+    "background": "linear-gradient(160deg, #C3CBDC 0%, #EDF1F7 45%, #9FB2CC 100%)",
+    "surface": "rgba(255,255,255,.8)",
+    "surface_alt": "rgba(255,255,255,.55)",
+    "text_primary": "#1B2430",
+    "text_muted": "#354152",
+    "text_muted_2": "#54617A",
+    "accent": "#1E62E6",
+    "accent_deep": "#1548AC",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(27,36,48,.3)",
+    "border_subtle": "rgba(27,36,48,.12)",
+    "status_live": "#19C37D"
+  },
+  "fonts": {
+    "sans": "Verdana, 'Trebuchet MS', Tahoma, sans-serif",
+    "mono": "'Courier New', Courier, monospace"
+  },
+  "radius": "20px",
+  "shadows": "medium"
+}

@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "last_updated": "2026-07-06",
+    "owner": "Jordan Sample",
+    "notes": "Single source of truth for the Vita widget. Edit and commit; widget updates within ~60s of deploy.",
+    "_template_note": "EVERYTHING IN THIS FILE IS FICTIONAL SAMPLE DATA for the Vita template. Jordan Sample does not exist. Replace every section with your own facts, keep the structural patterns (guardrails, _note fields, note_to_widget, role_clarification), and see the 'Fork it' section of the README. If a private data/resume.private.json exists, the deploy script and eval harness use it instead of this file."
+  },
+
+  "bio": {
+    "name": "Jordan Sample",
+    "current_role": "Operations Lead, Tidepool Analytics",
+    "current_employer": "Tidepool Analytics",
+    "location": "Portland, Oregon",
+    "hometown": "Boise, Idaho",
+    "summary": "Former high-school science teacher turned data-and-operations professional. Currently Operations Lead at Tidepool Analytics, a small environmental-data startup in Portland. Builds practical software side projects on nights and weekends and runs Driftwood Photo Tours, a weekend photography-tour business on the Oregon coast.",
+    "role_clarification": "Jordan is an Operations Lead, NOT a product manager or engineer. Jordan works closely with the product and engineering teams but the job title and function are operations. The widget must never describe Jordan as a product manager, project manager, or software engineer. (Template note: this field exists because titles are the #1 thing a model 'rounds up' — state the boundary explicitly.)"
+  },
+
+  "experience": [
+    {
+      "title": "Operations Lead",
+      "employer": "Tidepool Analytics",
+      "location": "Portland, OR (hybrid)",
+      "start_date": "2024-03",
+      "end_date": null,
+      "current": true,
+      "highlights": [
+        "Runs day-to-day operations for a 12-person environmental-data startup",
+        "Built the internal reporting pipeline that turns raw sensor data into the weekly customer-facing status reports",
+        "Owns vendor relationships, onboarding, and the operations budget",
+        "Coordinates quarterly planning across the product, field, and data teams"
+      ]
+    },
+    {
+      "title": "Data Analyst",
+      "employer": "Cascadia Utility Cooperative",
+      "location": "Portland, OR",
+      "start_date": "2021-06",
+      "end_date": "2024-02",
+      "current": false,
+      "highlights": [
+        "Analyzed outage and demand data for a regional utility cooperative serving ~90,000 members",
+        "Automated the monthly regulatory reporting workflow, cutting preparation time from three days to four hours",
+        "Built self-serve dashboards that replaced a shared-spreadsheet workflow across three departments"
+      ]
+    },
+    {
+      "title": "Science Teacher",
+      "employer": "Alder Creek High School",
+      "location": "Boise, ID",
+      "start_date": "2015-08",
+      "end_date": "2021-05",
+      "current": false,
+      "highlights": [
+        "Taught chemistry and environmental science to grades 10–12",
+        "Started and ran the school's robotics club for four years",
+        "Career-changed into data work in 2021 after completing an evening data-analytics certificate"
+      ]
+    }
+  ],
+
+  "businesses": [
+    {
+      "name": "Driftwood Photo Tours",
+      "legal_name": "Driftwood Photo Tours LLC",
+      "role": "Founder & Guide",
+      "since": 2022,
+      "location": "Based in Portland, OR — tours run along the northern Oregon coast (Cannon Beach, Ecola State Park, Hug Point)",
+      "contact": {
+        "website": "https://driftwood.example.com",
+        "quote_form": "https://driftwood.example.com/book",
+        "instagram": "https://www.instagram.com/example",
+        "_note": "TEMPLATE PATTERN: the booking phone number and email are injected at deploy time via the WINKS_PHONE / WINKS_EMAIL function secrets (rename the env vars to suit your business — the injection happens at startup in supabase/functions/vita-handler/index.ts). Deliberately not stored in this public file. Without the secrets, the widget directs people to the booking form."
+      },
+      "summary": "Weekend photography-tour business: small-group sunrise and golden-hour tours of the northern Oregon coast, with camera coaching for beginners.",
+      "offerings": [
+        "Sunrise tour — 3 hours, max 6 guests, tide-pool and sea-stack locations",
+        "Golden-hour tour — 2.5 hours, includes basic camera coaching",
+        "Private one-on-one coaching sessions"
+      ],
+      "pricing": "Group tours from $95 per person; private sessions from $250",
+      "reputation": [
+        "4.9-star average across roughly 80 reviews (fictional — replace with YOUR real, verifiable numbers; the eval gate should catch any inflation of these)"
+      ],
+      "highlights": [
+        "Operating since 2022, roughly 40 tours per season",
+        "All tours are walk-and-shoot format — no vehicle transport provided"
+      ]
+    }
+  ],
+
+  "education": [
+    {
+      "degree": "Bachelor of Science, Chemistry",
+      "school": "Boise State University",
+      "location": "Boise, Idaho",
+      "graduation_year": 2015,
+      "current": false
+    },
+    {
+      "program": "Data Analytics Certificate (evening program)",
+      "school": "Portland Community College",
+      "start_date": "2020-09",
+      "status": "Completed 2021",
+      "current": false
+    }
+  ],
+
+  "certifications": [
+    {
+      "name": "Wilderness First Responder (WFR)",
+      "issuer": "NOLS Wilderness Medicine",
+      "issued_year": 2022
+    }
+  ],
+
+  "projects": [
+    {
+      "name": "TideCheck",
+      "tagline": "Tide-window planner for coast photographers",
+      "description": "Web app Jordan designed and built that combines NOAA tide predictions with sunrise/sunset times to find safe, photogenic shooting windows on the Oregon coast. (Template pattern: state authorship explicitly — 'Jordan designed and built' — the eval judge flags implied-but-unstated authorship.)",
+      "stack": ["Next.js", "TypeScript", "NOAA APIs"],
+      "status": "Live",
+      "url": "https://tidecheck.example.com"
+    },
+    {
+      "name": "Homelab Wiki",
+      "tagline": "Self-hosted household documentation wiki",
+      "description": "A self-hosted wiki instance for household docs and runbooks. Jordan did NOT build the software — it's an open-source wiki that Jordan deploys and operates. (Template pattern: when you only operate something, say so explicitly, exactly like this — otherwise the widget will round 'runs' up to 'built'.)",
+      "stack": ["Docker", "open-source wiki software"],
+      "status": "Live (personal use)",
+      "url": null
+    },
+    {
+      "name": "Vita (this widget)",
+      "tagline": "Conversational resume widget",
+      "description": "The very widget you're talking to. A truth-anchored, conversational interface to a resume that refuses to hallucinate. This deployment runs on fictional sample data — fork it, swap in your resume.json, and it becomes yours.",
+      "stack": ["React", "Vite", "Tailwind", "Supabase Edge Functions", "Claude Sonnet 4.6"],
+      "status": "Template",
+      "url": "https://vita-widget.vercel.app"
+    }
+  ],
+
+  "skills": {
+    "data_and_analytics": [
+      "SQL and dashboarding",
+      "Python for data cleaning and automation",
+      "Regulatory and operational reporting"
+    ],
+    "operations": [
+      "Vendor management",
+      "Process documentation and SOPs",
+      "Cross-team planning"
+    ],
+    "engineering": [
+      "TypeScript / Next.js (side-project level)",
+      "Self-hosting and Docker basics"
+    ],
+    "outdoors_and_photography": [
+      "Landscape and coastal photography",
+      "Group guiding and outdoor safety (WFR-certified)"
+    ]
+  },
+
+  "interests": [
+    "Coastal and landscape photography (personal hobby — tours are the business, but Jordan also shoots recreationally)",
+    "Tide-pooling and amateur marine biology",
+    "Homelab tinkering and self-hosted software"
+  ],
+
+  "personal": {
+    "note_to_widget": "Only the items listed here are public-safe to share. The widget should NOT speculate about family details, finances, or any topic not explicitly listed here.",
+    "background": "Grew up in Boise, Idaho. Moved to Portland, Oregon in 2021 for the career change into data work.",
+    "family": "Married. (No further family details are shared publicly.)"
+  },
+
+  "contact": {
+    "website": "https://jordansample.example.com",
+    "github": "https://github.com/example",
+    "linkedin": "https://www.linkedin.com/in/example/",
+    "_note": "TEMPLATE PATTERN: a direct email is injected at deploy time via the CONTACT_EMAIL function secret — deliberately not stored in this public file. Without the secret, the widget points people to the website and LinkedIn.",
+    "note_to_widget": "For Driftwood Photo Tours booking inquiries, direct people to the booking form in the businesses section rather than Jordan's direct email."
+  },
+
+  "guardrails": {
+    "topics_to_redirect": [
+      "Compensation, salary, or pay history",
+      "Specific financial details (investments, mortgage, net worth, account balances)",
+      "Spouse's name, employer, or daily life",
+      "Home address or specific location beyond 'Portland, Oregon'",
+      "Medical history or health information",
+      "Political opinions, voting record, or partisan topics",
+      "Religious beliefs, theological questions, or spiritual practices",
+      "Hot-button social issues (abortion, gun control, immigration policy, etc.)",
+      "Personal opinions on controversial subjects",
+      "Anything not explicitly in this file"
+    ],
+    "redirect_style": "When asked about a topic in topics_to_redirect, OR any topic not covered in this file, decline in a quirky, friendly way and pivot to a topic this file DOES cover. Never invent facts to fill the gap. For politics, religion, and controversial topics specifically: never speculate about Jordan's views, even if pressed multiple times."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "glassmorphism",
+  "label": "Glassmorphism",
+  "_vibe": "Frosted-glass panels over a soft gradient — modern designers, product folks",
+  "colors": {
+    "background": "linear-gradient(135deg, #667EEA 0%, #764BA2 100%)",
+    "surface": "rgba(255,255,255,.62)",
+    "surface_alt": "rgba(255,255,255,.42)",
+    "text_primary": "#221E38",
+    "text_muted": "#3C3558",
+    "text_muted_2": "#575072",
+    "accent": "#5A4BD1",
+    "accent_deep": "#483AB5",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(255,255,255,.55)",
+    "border_subtle": "rgba(255,255,255,.28)",
+    "status_live": "#3CCB7F"
+  },
+  "fonts": {
+    "sans": "'Avenir Next', 'Segoe UI', system-ui, sans-serif",
+    "mono": "ui-monospace, Menlo, monospace"
+  },
+  "radius": "16px",
+  "shadows": "medium"
+}

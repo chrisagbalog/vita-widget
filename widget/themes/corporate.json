@@ -1,0 +1,25 @@
+{
+  "name": "corporate",
+  "label": "Corporate",
+  "_vibe": "LinkedIn-blue, polished, conservative — recruiter-safe; finance, consulting, legal",
+  "colors": {
+    "background": "#F3F6F9",
+    "surface": "#FFFFFF",
+    "surface_alt": "#E9EFF5",
+    "text_primary": "#102A43",
+    "text_muted": "#334E68",
+    "text_muted_2": "#627D98",
+    "accent": "#0A66C2",
+    "accent_deep": "#084F96",
+    "on_accent": "#FFFFFF",
+    "border": "rgba(16,42,67,.18)",
+    "border_subtle": "rgba(16,42,67,.07)",
+    "status_live": "#2E8540"
+  },
+  "fonts": {
+    "sans": "'Segoe UI', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "mono": "ui-monospace, Consolas, Menlo, monospace"
+  },
+  "radius": "6px",
+  "shadows": "subtle"
+}

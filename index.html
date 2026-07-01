@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vita — a conversational resume</title>
+  <meta name="description" content="Vita answers questions about Chris Agbalog using only his resume. Truth-anchored: if it's not in the resume, it says so." />
+  <!-- Sentry error monitoring (loader: ~3KB stub that only downloads the
+       full SDK if an error actually happens). The key in the URL is a public
+       write-only identifier — safe to commit, like a Supabase anon key. -->
+  <script
+    defer
+    src="https://js.sentry-cdn.com/f75e28c0bbfb82858e73e25993cd2739.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Site-match fonts (same imports chrisagbalog.com uses) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- Vercel Web Analytics (cookieless page-view counts). The script only
+       exists on the production domain — locally it 404s harmlessly. -->
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

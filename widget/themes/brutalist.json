@@ -1,0 +1,25 @@
+{
+  "name": "brutalist",
+  "label": "Brutalist",
+  "_vibe": "Hard edges, raw HTML feel, bold black & yellow — designers, agency creatives",
+  "colors": {
+    "background": "#FFEE32",
+    "surface": "#FFFFFF",
+    "surface_alt": "#FFF9C9",
+    "text_primary": "#000000",
+    "text_muted": "#1A1A1A",
+    "text_muted_2": "#3D3D3D",
+    "accent": "#000000",
+    "accent_deep": "#000000",
+    "on_accent": "#FFEE32",
+    "border": "#000000",
+    "border_subtle": "rgba(0,0,0,.4)",
+    "status_live": "#000000"
+  },
+  "fonts": {
+    "sans": "'Arial Black', 'Helvetica Neue', Arial, sans-serif",
+    "mono": "'Courier New', Courier, monospace"
+  },
+  "radius": "0px",
+  "shadows": "hard"
+}
