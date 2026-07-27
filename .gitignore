@@ -53,3 +53,6 @@ npm-debug.log*
 # themselves contain real personal facts) ===
 evals/reports/
 __pycache__/
+
+# Personal task list — not for the public repo
+TODO.md
