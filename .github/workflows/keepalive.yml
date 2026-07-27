@@ -1,7 +1,12 @@
-# Daily keep-alive ping so Supabase's free-tier inactivity scan never pauses
+# Daily keep-alive pings so Supabase's free-tier inactivity scan never pauses
 # the project (it pauses after ~7 days without external API traffic; internal
-# pg_cron jobs don't count). One anon-key REST read per day — rate_limits has
-# RLS with no policies, so the request registers activity but returns no rows.
+# pg_cron jobs don't count). Two free requests per day, no Anthropic tokens:
+#   1. OPTIONS to the vita-handler edge function — answered by the function's
+#      own code (204), so it registers as a real function invocation AND
+#      verifies the backend is actually up.
+#   2. GET /auth/v1/health with the anon key — a normal API-gateway request.
+# (A REST table read isn't possible here: the anon role deliberately has zero
+# privileges on every table.)
 # A failed ping fails the workflow, so GitHub emails the repo owner — this
 # doubles as basic uptime monitoring for the backend.
 #
@@ -31,8 +36,13 @@ jobs:
           # email); 3 retries ride out transient network blips.
           curl --fail --silent --show-error \
             --retry 3 --retry-delay 10 \
-            -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
-            "https://hnezbferzpjmkgmtlgar.supabase.co/rest/v1/rate_limits?select=id&limit=1" \
+            -X OPTIONS \
+            "https://hnezbferzpjmkgmtlgar.supabase.co/functions/v1/vita-handler" \
             > /dev/null
-          echo "Supabase ping OK — project activity registered."
+          echo "Edge function ping OK (204)."
+          curl --fail --silent --show-error \
+            --retry 3 --retry-delay 10 \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            "https://hnezbferzpjmkgmtlgar.supabase.co/auth/v1/health" \
+            > /dev/null
+          echo "Auth health ping OK (200) — project activity registered."
